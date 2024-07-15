@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            label1 = new Label();
-            buttonRemove = new Button();
             studentNumber = new ColumnHeader();
             lastName = new ColumnHeader();
+            label1 = new Label();
+            buttonRemove = new Button();
             SuspendLayout();
             // 
             // listView1
@@ -44,13 +44,21 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // studentNumber
+            // 
+            studentNumber.Text = "Student No.";
+            // 
+            // lastName
+            // 
+            lastName.Text = "Last Name";
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(125, 9);
+            label1.Font = new Font("Impact", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(157, 9);
             label1.Name = "label1";
-            label1.Size = new Size(221, 54);
+            label1.Size = new Size(172, 42);
             label1.TabIndex = 1;
             label1.Text = "EVENT TITLE";
             // 
@@ -63,14 +71,6 @@
             buttonRemove.Text = "On Time";
             buttonRemove.UseVisualStyleBackColor = true;
             // 
-            // studentNumber
-            // 
-            studentNumber.Text = "Student No.";
-            // 
-            // lastName
-            // 
-            lastName.Text = "Last Name";
-            // 
             // listForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -79,6 +79,7 @@
             Controls.Add(buttonRemove);
             Controls.Add(label1);
             Controls.Add(listView1);
+            MaximizeBox = false;
             Name = "listForm";
             Text = "LATE STUDENTS";
             Load += listForm_Load;

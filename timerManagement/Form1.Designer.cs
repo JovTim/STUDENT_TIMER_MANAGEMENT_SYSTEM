@@ -44,9 +44,15 @@
             timer1 = new System.Windows.Forms.Timer(components);
             digitalClock1 = new digitalClock();
             buttonFormList = new Button();
+            panel3 = new Panel();
+            label4 = new Label();
+            label3 = new Label();
+            listView2 = new ListView();
+            listView1 = new ListView();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -56,7 +62,7 @@
             flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Location = new Point(332, 5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(791, 610);
+            flowLayoutPanel1.Size = new Size(791, 690);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -194,15 +200,61 @@
             buttonFormList.Name = "buttonFormList";
             buttonFormList.Size = new Size(309, 75);
             buttonFormList.TabIndex = 7;
-            buttonFormList.Text = "LATE LIST";
+            buttonFormList.Text = "CHECK ALL STUDENTS";
             buttonFormList.UseVisualStyleBackColor = true;
             buttonFormList.Click += buttonFormList_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(listView2);
+            panel3.Controls.Add(listView1);
+            panel3.Location = new Point(1129, 5);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(446, 671);
+            panel3.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 351);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 20);
+            label4.TabIndex = 3;
+            label4.Text = "ON TIME";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(41, 20);
+            label3.TabIndex = 2;
+            label3.Text = "LATE";
+            // 
+            // listView2
+            // 
+            listView2.Location = new Point(3, 374);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(435, 294);
+            listView2.TabIndex = 1;
+            listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(3, 33);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(435, 305);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1126, 618);
+            ClientSize = new Size(1578, 707);
+            Controls.Add(panel3);
             Controls.Add(buttonFormList);
             Controls.Add(digitalClock1);
             Controls.Add(panel2);
@@ -217,6 +269,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -238,5 +292,10 @@
         private Label label2;
         private digitalClock digitalClock1;
         private Button buttonFormList;
+        private Panel panel3;
+        private Label label4;
+        private Label label3;
+        private ListView listView2;
+        private ListView listView1;
     }
 }

@@ -75,10 +75,12 @@ namespace timerManagement
 
         }
 
+
         private void buttonFormList_Click(object sender, EventArgs e)
         {
             listForm liform = new listForm();
             liform.ShowDialog();
+
         }
     }
 }
