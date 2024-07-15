@@ -43,6 +43,7 @@
             buttonStart = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             digitalClock1 = new digitalClock();
+            buttonFormList = new Button();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -153,6 +154,7 @@
             // 
             // panel2
             // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(buttonStart);
             panel2.Controls.Add(eventTextBox);
             panel2.Controls.Add(dateTimePicker1);
@@ -185,11 +187,23 @@
             digitalClock1.Size = new Size(300, 97);
             digitalClock1.TabIndex = 6;
             // 
+            // buttonFormList
+            // 
+            buttonFormList.Enabled = false;
+            buttonFormList.Location = new Point(12, 258);
+            buttonFormList.Name = "buttonFormList";
+            buttonFormList.Size = new Size(309, 75);
+            buttonFormList.TabIndex = 7;
+            buttonFormList.Text = "LATE LIST";
+            buttonFormList.UseVisualStyleBackColor = true;
+            buttonFormList.Click += buttonFormList_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1126, 618);
+            Controls.Add(buttonFormList);
             Controls.Add(digitalClock1);
             Controls.Add(panel2);
             Controls.Add(timeForm);
@@ -223,5 +237,6 @@
         private Button buttonStart;
         private Label label2;
         private digitalClock digitalClock1;
+        private Button buttonFormList;
     }
 }

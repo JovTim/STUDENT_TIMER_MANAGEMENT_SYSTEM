@@ -54,6 +54,7 @@ namespace timerManagement
             eventTextBox.Enabled = false;
             dateTimePicker1.Enabled = false;
             buttonStart.Enabled = false;
+            buttonFormList.Enabled = true;
 
         }
 
@@ -72,6 +73,12 @@ namespace timerManagement
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonFormList_Click(object sender, EventArgs e)
+        {
+            listForm liform = new listForm();
+            liform.ShowDialog();
         }
     }
 }
