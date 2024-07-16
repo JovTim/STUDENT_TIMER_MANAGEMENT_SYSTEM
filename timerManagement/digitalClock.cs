@@ -26,5 +26,10 @@ namespace timerManagement
         {
             timer1.Start();
         }
+
+        private void clock_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

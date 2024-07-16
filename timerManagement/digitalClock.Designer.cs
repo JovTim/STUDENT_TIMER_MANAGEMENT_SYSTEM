@@ -42,6 +42,7 @@
             clock.Size = new Size(332, 98);
             clock.TabIndex = 0;
             clock.Text = "00:00:00";
+            clock.Click += clock_Click;
             // 
             // timer1
             // 

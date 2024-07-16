@@ -56,7 +56,7 @@
             // 
             // buttonShow
             // 
-            buttonShow.Location = new Point(3, 180);
+            buttonShow.Location = new Point(3, 207);
             buttonShow.Name = "buttonShow";
             buttonShow.Size = new Size(94, 29);
             buttonShow.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             // groupDelete
             // 
-            groupDelete.Location = new Point(292, 3);
+            groupDelete.Location = new Point(325, 3);
             groupDelete.Name = "groupDelete";
             groupDelete.Size = new Size(68, 29);
             groupDelete.TabIndex = 3;
@@ -84,7 +84,7 @@
             Controls.Add(label1);
             Controls.Add(groupName);
             Name = "groupData";
-            Size = new Size(363, 212);
+            Size = new Size(396, 239);
             Load += groupData_Load;
             ResumeLayout(false);
             PerformLayout();

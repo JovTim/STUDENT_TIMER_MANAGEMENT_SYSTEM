@@ -62,7 +62,7 @@
             flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Location = new Point(332, 5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(791, 690);
+            flowLayoutPanel1.Size = new Size(834, 690);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -74,7 +74,7 @@
             panel1.Controls.Add(label2);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(788, 40);
+            panel1.Size = new Size(831, 40);
             panel1.TabIndex = 0;
             // 
             // addGroup
@@ -99,6 +99,7 @@
             evenTitle.Size = new Size(151, 37);
             evenTitle.TabIndex = 3;
             evenTitle.Text = "EVENT TITLE";
+            evenTitle.Click += evenTitle_Click;
             // 
             // addButton
             // 
@@ -188,9 +189,9 @@
             // 
             // digitalClock1
             // 
-            digitalClock1.Location = new Point(15, 11);
+            digitalClock1.Location = new Point(12, 12);
             digitalClock1.Name = "digitalClock1";
-            digitalClock1.Size = new Size(300, 97);
+            digitalClock1.Size = new Size(309, 97);
             digitalClock1.TabIndex = 6;
             // 
             // buttonFormList
@@ -210,7 +211,7 @@
             panel3.Controls.Add(label3);
             panel3.Controls.Add(listView2);
             panel3.Controls.Add(listView1);
-            panel3.Location = new Point(1129, 5);
+            panel3.Location = new Point(1172, 5);
             panel3.Name = "panel3";
             panel3.Size = new Size(446, 671);
             panel3.TabIndex = 8;
@@ -253,7 +254,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1578, 707);
+            ClientSize = new Size(1621, 707);
             Controls.Add(panel3);
             Controls.Add(buttonFormList);
             Controls.Add(digitalClock1);
@@ -262,7 +263,7 @@
             Controls.Add(flowLayoutPanel1);
             MaximizeBox = false;
             Name = "Form1";
-            Text = "STUDENT TIMER MANAGEMENT SYSTEM";
+            Text = "STUDENT TIMER TRACKER MANAGEMENT SYSTEM";
             Load += Form1_Load;
             flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);

@@ -24,6 +24,7 @@ namespace timerManagement
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+        private int totalSeconds;
         public individualData()
         {
             InitializeComponent();
@@ -33,6 +34,12 @@ namespace timerManagement
         private void individualData_Load(object? sender, EventArgs e)
         {
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            int minutes = 15;
+            int seconds = 00;
+            totalSeconds = (minutes * 60) + seconds;
+
+            indiTimer.Start();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -41,6 +48,46 @@ namespace timerManagement
             {
                 this.Parent.Controls.Remove(this);
                 this.Dispose();
+            }
+        }
+
+        public void SetIndividualData(string id, string firstName, string lastName, string middleInitial)
+        {
+            string fullName = $"{lastName}, {firstName} {middleInitial}.";
+            fullNameLabel.Text = fullName;
+            userIdLbael.Text = id;
+
+        }
+
+
+        private void fullNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void controlTime_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void indiTimer_Tick(object sender, EventArgs e)
+        {
+            if (totalSeconds > 0)
+            {
+                totalSeconds--;
+                int minutes = totalSeconds / 60;
+                int seconds = totalSeconds - (minutes * 60);
+                controlTime.Text = $"{minutes:D2}:{seconds:D2}";
+            }
+            else
+            {
+                indiTimer.Stop();
+                if (this.Parent != null)
+                {
+                    this.Parent.Controls.Remove(this);
+                    this.Dispose();
+                }
+
             }
         }
     }

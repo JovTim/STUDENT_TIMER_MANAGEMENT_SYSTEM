@@ -28,36 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             fullNameLabel = new Label();
             controlTime = new Label();
             buttonDelete = new Button();
+            userIdLbael = new Label();
+            indiTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // fullNameLabel
             // 
             fullNameLabel.AutoSize = true;
-            fullNameLabel.Font = new Font("Impact", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fullNameLabel.Font = new Font("Impact", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             fullNameLabel.ForeColor = SystemColors.ButtonHighlight;
-            fullNameLabel.Location = new Point(0, 0);
+            fullNameLabel.Location = new Point(3, 48);
             fullNameLabel.Name = "fullNameLabel";
-            fullNameLabel.Size = new Size(249, 42);
+            fullNameLabel.Size = new Size(195, 35);
             fullNameLabel.TabIndex = 0;
-            fullNameLabel.Text = "Dela Cruz, Juan P.";
+            fullNameLabel.Text = "Last, First Initial";
+            fullNameLabel.Click += fullNameLabel_Click;
             // 
             // controlTime
             // 
             controlTime.AutoSize = true;
             controlTime.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
             controlTime.ForeColor = SystemColors.ButtonHighlight;
-            controlTime.Location = new Point(-14, 42);
+            controlTime.Location = new Point(86, 92);
             controlTime.Name = "controlTime";
-            controlTime.Size = new Size(312, 98);
+            controlTime.Size = new Size(217, 98);
             controlTime.TabIndex = 1;
-            controlTime.Text = "15:43:20";
+            controlTime.Text = "15:00";
+            controlTime.Click += controlTime_Click;
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(292, 3);
+            buttonDelete.Location = new Point(325, 3);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(68, 29);
             buttonDelete.TabIndex = 2;
@@ -65,16 +70,33 @@
             buttonDelete.UseVisualStyleBackColor = true;
             buttonDelete.Click += buttonDelete_Click;
             // 
+            // userIdLbael
+            // 
+            userIdLbael.AutoSize = true;
+            userIdLbael.Font = new Font("Impact", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userIdLbael.ForeColor = SystemColors.ButtonHighlight;
+            userIdLbael.Location = new Point(3, 3);
+            userIdLbael.Name = "userIdLbael";
+            userIdLbael.Size = new Size(174, 42);
+            userIdLbael.TabIndex = 3;
+            userIdLbael.Text = "Student No.";
+            // 
+            // indiTimer
+            // 
+            indiTimer.Interval = 1000;
+            indiTimer.Tick += indiTimer_Tick;
+            // 
             // individualData
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
+            Controls.Add(userIdLbael);
             Controls.Add(buttonDelete);
             Controls.Add(controlTime);
             Controls.Add(fullNameLabel);
             Name = "individualData";
-            Size = new Size(363, 212);
+            Size = new Size(396, 239);
             Load += individualData_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -85,5 +107,7 @@
         private Label fullNameLabel;
         private Label controlTime;
         private Button buttonDelete;
+        private Label userIdLbael;
+        private System.Windows.Forms.Timer indiTimer;
     }
 }

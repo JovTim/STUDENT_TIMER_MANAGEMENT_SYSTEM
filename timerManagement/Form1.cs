@@ -55,6 +55,7 @@ namespace timerManagement
             dateTimePicker1.Enabled = false;
             buttonStart.Enabled = false;
             buttonFormList.Enabled = true;
+            MessageBox.Show("A CSV file has been created!", "Success!");
 
         }
 
@@ -68,6 +69,7 @@ namespace timerManagement
             {
                 buttonStart.Enabled = false;
             }
+            evenTitle.Text = eventTextBox.Text;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -80,6 +82,11 @@ namespace timerManagement
         {
             listForm liform = new listForm();
             liform.ShowDialog();
+
+        }
+
+        private void evenTitle_Click(object sender, EventArgs e)
+        {
 
         }
     }
