@@ -58,5 +58,10 @@ namespace timerManagement
         {
 
         }
+
+        private void individualForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

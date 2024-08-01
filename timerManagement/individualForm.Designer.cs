@@ -138,6 +138,7 @@
             Controls.Add(indiConfirm);
             Name = "individualForm";
             Text = "ADD USER INFORMATION";
+            Load += individualForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

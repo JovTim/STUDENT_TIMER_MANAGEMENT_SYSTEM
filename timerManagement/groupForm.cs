@@ -23,7 +23,20 @@ namespace timerManagement
         {
             groupData groupData = new groupData();
             _form1.AddGroupData(groupData);
+
+            groupData.groupNameTitle(groupNameTextBox.Text);
+
             this.Close();
+        }
+
+        private void groupNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

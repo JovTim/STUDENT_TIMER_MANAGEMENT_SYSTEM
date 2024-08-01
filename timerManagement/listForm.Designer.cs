@@ -28,35 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
-            studentNumber = new ColumnHeader();
-            lastName = new ColumnHeader();
+            allStudentList = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             label1 = new Label();
             buttonRemove = new Button();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
             SuspendLayout();
             // 
-            // listView1
+            // allStudentList
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { studentNumber, lastName });
-            listView1.Location = new Point(12, 122);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(460, 367);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            allStudentList.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
+            allStudentList.FullRowSelect = true;
+            allStudentList.GridLines = true;
+            allStudentList.Location = new Point(12, 122);
+            allStudentList.Name = "allStudentList";
+            allStudentList.Size = new Size(675, 477);
+            allStudentList.TabIndex = 0;
+            allStudentList.UseCompatibleStateImageBehavior = false;
+            allStudentList.View = View.Details;
+            allStudentList.SelectedIndexChanged += allStudentList_SelectedIndexChanged;
             // 
-            // studentNumber
+            // columnHeader1
             // 
-            studentNumber.Text = "Student No.";
+            columnHeader1.Text = "Student No.";
+            columnHeader1.Width = 120;
             // 
-            // lastName
+            // columnHeader2
             // 
-            lastName.Text = "Last Name";
+            columnHeader2.Text = "Student";
+            columnHeader2.Width = 150;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Impact", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(157, 9);
+            label1.Location = new Point(241, 9);
             label1.Name = "label1";
             label1.Size = new Size(172, 42);
             label1.TabIndex = 1;
@@ -64,24 +74,44 @@
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(193, 503);
+            buttonRemove.Location = new Point(279, 605);
             buttonRemove.Name = "buttonRemove";
             buttonRemove.Size = new Size(94, 29);
             buttonRemove.TabIndex = 2;
             buttonRemove.Text = "On Time";
             buttonRemove.UseVisualStyleBackColor = true;
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Time End";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Time Expected";
+            columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Time End";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Status";
+            columnHeader6.Width = 100;
+            // 
             // listForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 544);
+            ClientSize = new Size(696, 646);
             Controls.Add(buttonRemove);
             Controls.Add(label1);
-            Controls.Add(listView1);
+            Controls.Add(allStudentList);
             MaximizeBox = false;
             Name = "listForm";
-            Text = "LATE STUDENTS";
+            Text = "STUDENT LIST";
             Load += listForm_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -89,10 +119,14 @@
 
         #endregion
 
-        private ListView listView1;
+        private ListView allStudentList;
         private Label label1;
-        private ColumnHeader studentNumber;
-        private ColumnHeader lastName;
         private Button buttonRemove;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
     }
 }

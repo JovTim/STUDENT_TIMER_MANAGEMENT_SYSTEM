@@ -1,11 +1,16 @@
+using static timerManagement.individualData;
+
 namespace timerManagement
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+
         }
+
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -55,7 +60,7 @@ namespace timerManagement
             dateTimePicker1.Enabled = false;
             buttonStart.Enabled = false;
             buttonFormList.Enabled = true;
-            MessageBox.Show("A CSV file has been created!", "Success!");
+            MessageBox.Show($"{eventTextBox.Text} csv file has been created!", "Success!");
 
         }
 
@@ -86,6 +91,11 @@ namespace timerManagement
         }
 
         private void evenTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void onTimeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupName = new Label();
-            label1 = new Label();
+            groupControlTime = new Label();
             buttonShow = new Button();
             groupDelete = new Button();
+            groupTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // groupName
@@ -43,16 +45,18 @@
             groupName.Size = new Size(128, 42);
             groupName.TabIndex = 0;
             groupName.Text = "AMBATU";
+            groupName.Click += groupName_Click;
             // 
-            // label1
+            // groupControlTime
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(-13, 42);
-            label1.Name = "label1";
-            label1.Size = new Size(303, 98);
-            label1.TabIndex = 1;
-            label1.Text = "15:50:21";
+            groupControlTime.AutoSize = true;
+            groupControlTime.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupControlTime.Location = new Point(86, 92);
+            groupControlTime.Name = "groupControlTime";
+            groupControlTime.Size = new Size(217, 98);
+            groupControlTime.TabIndex = 1;
+            groupControlTime.Text = "15:00";
+            groupControlTime.Click += groupControlTime_Click;
             // 
             // buttonShow
             // 
@@ -74,6 +78,11 @@
             groupDelete.UseVisualStyleBackColor = true;
             groupDelete.Click += groupDelete_Click;
             // 
+            // groupTimer
+            // 
+            groupTimer.Interval = 1000;
+            groupTimer.Tick += groupTimer_Tick;
+            // 
             // groupData
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -81,7 +90,7 @@
             BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(groupDelete);
             Controls.Add(buttonShow);
-            Controls.Add(label1);
+            Controls.Add(groupControlTime);
             Controls.Add(groupName);
             Name = "groupData";
             Size = new Size(396, 239);
@@ -93,8 +102,9 @@
         #endregion
 
         private Label groupName;
-        private Label label1;
+        private Label groupControlTime;
         private Button buttonShow;
         private Button groupDelete;
+        private System.Windows.Forms.Timer groupTimer;
     }
 }

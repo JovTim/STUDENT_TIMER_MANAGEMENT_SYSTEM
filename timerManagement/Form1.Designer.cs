@@ -47,8 +47,16 @@
             panel3 = new Panel();
             label4 = new Label();
             label3 = new Label();
-            listView2 = new ListView();
+            onTimeList = new ListView();
+            oStudentIDCol = new ColumnHeader();
+            oLastNameCol = new ColumnHeader();
+            oFirstName = new ColumnHeader();
+            omiddleInitialCol = new ColumnHeader();
             listView1 = new ListView();
+            studentIDCol = new ColumnHeader();
+            lastNameCol = new ColumnHeader();
+            firstNameCol = new ColumnHeader();
+            middleInitialCol = new ColumnHeader();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -94,7 +102,8 @@
             // 
             evenTitle.AutoSize = true;
             evenTitle.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            evenTitle.Location = new Point(370, 1);
+            evenTitle.ForeColor = SystemColors.ControlText;
+            evenTitle.Location = new Point(313, 0);
             evenTitle.Name = "evenTitle";
             evenTitle.Size = new Size(151, 37);
             evenTitle.TabIndex = 3;
@@ -157,6 +166,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(274, 27);
             dateTimePicker1.TabIndex = 4;
+            dateTimePicker1.Value = new DateTime(2024, 8, 1, 7, 30, 33, 0);
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // panel2
@@ -209,7 +219,7 @@
             // 
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(listView2);
+            panel3.Controls.Add(onTimeList);
             panel3.Controls.Add(listView1);
             panel3.Location = new Point(1172, 5);
             panel3.Name = "panel3";
@@ -234,21 +244,70 @@
             label3.TabIndex = 2;
             label3.Text = "LATE";
             // 
-            // listView2
+            // onTimeList
             // 
-            listView2.Location = new Point(3, 374);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(435, 294);
-            listView2.TabIndex = 1;
-            listView2.UseCompatibleStateImageBehavior = false;
+            onTimeList.Columns.AddRange(new ColumnHeader[] { oStudentIDCol, oLastNameCol, oFirstName, omiddleInitialCol });
+            onTimeList.FullRowSelect = true;
+            onTimeList.GridLines = true;
+            onTimeList.Location = new Point(3, 374);
+            onTimeList.Name = "onTimeList";
+            onTimeList.Size = new Size(435, 294);
+            onTimeList.TabIndex = 1;
+            onTimeList.UseCompatibleStateImageBehavior = false;
+            onTimeList.View = View.Details;
+            onTimeList.SelectedIndexChanged += onTimeList_SelectedIndexChanged;
+            // 
+            // oStudentIDCol
+            // 
+            oStudentIDCol.Text = "Student ID";
+            oStudentIDCol.Width = 110;
+            // 
+            // oLastNameCol
+            // 
+            oLastNameCol.Text = "Last Name";
+            oLastNameCol.Width = 110;
+            // 
+            // oFirstName
+            // 
+            oFirstName.Text = "First Name";
+            oFirstName.Width = 110;
+            // 
+            // omiddleInitialCol
+            // 
+            omiddleInitialCol.Text = "Middle Initial";
+            omiddleInitialCol.Width = 110;
             // 
             // listView1
             // 
+            listView1.Columns.AddRange(new ColumnHeader[] { studentIDCol, lastNameCol, firstNameCol, middleInitialCol });
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
             listView1.Location = new Point(3, 33);
             listView1.Name = "listView1";
             listView1.Size = new Size(435, 305);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // studentIDCol
+            // 
+            studentIDCol.Text = "Student ID";
+            studentIDCol.Width = 110;
+            // 
+            // lastNameCol
+            // 
+            lastNameCol.Text = "Last Name";
+            lastNameCol.Width = 110;
+            // 
+            // firstNameCol
+            // 
+            firstNameCol.Text = "First Name";
+            firstNameCol.Width = 110;
+            // 
+            // middleInitialCol
+            // 
+            middleInitialCol.Text = "Middle Inital";
+            middleInitialCol.Width = 100;
             // 
             // Form1
             // 
@@ -296,7 +355,15 @@
         private Panel panel3;
         private Label label4;
         private Label label3;
-        private ListView listView2;
+        private ListView onTimeList;
         private ListView listView1;
+        private ColumnHeader oStudentIDCol;
+        private ColumnHeader oLastNameCol;
+        private ColumnHeader oFirstName;
+        private ColumnHeader omiddleInitialCol;
+        private ColumnHeader studentIDCol;
+        private ColumnHeader lastNameCol;
+        private ColumnHeader firstNameCol;
+        private ColumnHeader middleInitialCol;
     }
 }
