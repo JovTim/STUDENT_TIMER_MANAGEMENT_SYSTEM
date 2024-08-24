@@ -31,12 +31,12 @@
             allStudentList = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
-            label1 = new Label();
-            buttonRemove = new Button();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
+            label1 = new Label();
+            buttonRemove = new Button();
             SuspendLayout();
             // 
             // allStudentList
@@ -62,6 +62,26 @@
             columnHeader2.Text = "Student";
             columnHeader2.Width = 150;
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Time Start";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Time Expected";
+            columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Time End";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Status";
+            columnHeader6.Width = 100;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -80,26 +100,6 @@
             buttonRemove.TabIndex = 2;
             buttonRemove.Text = "On Time";
             buttonRemove.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Time End";
-            columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Time Expected";
-            columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Time End";
-            columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Status";
-            columnHeader6.Width = 100;
             // 
             // listForm
             // 

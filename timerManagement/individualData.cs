@@ -27,10 +27,13 @@ namespace timerManagement
 
         private int totalSeconds;
 
+        private sqliteDataAccess dataAccess;
+
         public individualData()
         {
             InitializeComponent();
             this.Load += new EventHandler(individualData_Load);
+            dataAccess = new sqliteDataAccess();
         }
 
         private void individualData_Load(object? sender, EventArgs e)
@@ -48,6 +51,8 @@ namespace timerManagement
         {
             if (this.Parent != null)
             {
+                dataAccess.deleteTimeTracked(userIdLbael.Text);
+
                 this.Parent.Controls.Remove(this);
                 this.Dispose();
             }
@@ -89,6 +94,8 @@ namespace timerManagement
                 indiTimer.Stop();
                 if (this.Parent != null)
                 {
+                    string timeEnd = DateTime.Now.ToString("HH:mm:ss");
+                    dataAccess.UpdateTime(timeEnd, 2, userIdLbael.Text);
                     this.Parent.Controls.Remove(this);
                     this.Dispose();
                 }
@@ -113,6 +120,54 @@ namespace timerManagement
 
         private void buttonOnTime_Click(object sender, EventArgs e)
         {
+            
+            if (this.Parent != null)
+            {
+                string timeEnd = DateTime.Now.ToString("HH:mm:ss");
+                dataAccess.UpdateTime(timeEnd, 1, userIdLbael.Text);
+                this.Parent.Controls.Remove(this);
+                this.Dispose();
+            }
+            
+
+            /*
+            if (this.Parent != null)
+            {
+                Form1 mainForm = this.Parent as Form1;
+                if (mainForm != null)
+                {
+                    string timeEnd = DateTime.Now.ToString("HH:mm:ss");
+                    dataAccess.UpdateTime(timeEnd, 1, userIdLbael.Text);
+
+                    mainForm.loadStudentOnTime();
+
+                    this.Parent.Controls.Remove(this);
+                    this.Dispose();
+                }
+            }
+            */
+            
+
+            /*
+            if (this.Parent is Form1 mainForm)
+            {
+                // Update the time in the database
+                string timeEnd = DateTime.Now.ToString("HH:mm:ss");
+                dataAccess.UpdateTime(timeEnd, 1, userIdLbael.Text);
+
+                // Call the method to reload the ListView
+                mainForm.loadStudentOnTime();
+
+                // Remove and dispose of the UserControl
+                this.Parent.Controls.Remove(this);
+                this.Dispose();
+            }
+            else
+            {
+                // Handle the case where Parent is null, if necessary
+                MessageBox.Show("Parent form is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            */
         }
     }
 }

@@ -136,6 +136,9 @@
             Controls.Add(indiStuFirst);
             Controls.Add(indiStudentId);
             Controls.Add(indiConfirm);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "individualForm";
             Text = "ADD USER INFORMATION";
             Load += individualForm_Load;

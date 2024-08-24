@@ -4,13 +4,42 @@ namespace timerManagement
 {
     public partial class Form1 : Form
     {
-
+        private sqliteDataAccess dataAccess;
         public Form1()
         {
             InitializeComponent();
-
+            dataAccess = new sqliteDataAccess();
+            loadStudentLate();
+            loadStudentOnTime();
         }
 
+        private void loadStudentLate()
+        {
+            if (listViewOnTime.Enabled)
+            {
+                List<string[]> people = dataAccess.loadStudentLate();
+                listViewLate.Items.Clear();
+                foreach (string[] person in people)
+                {
+                    var listViewItem = new ListViewItem(person);
+                    listViewLate.Items.Add(listViewItem);
+                }
+            }
+        }
+
+        public void loadStudentOnTime()
+        {
+            if (listViewOnTime.Enabled)
+            {
+                List<string[]> people = dataAccess.loadStudentOnTime();
+                listViewOnTime.Items.Clear();
+                foreach (string[] person in people)
+                {
+                    var listViewItem = new ListViewItem(person);
+                    listViewOnTime.Items.Add(listViewItem);
+                }
+            }
+        }
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -48,7 +77,8 @@ namespace timerManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //timer1.Start();
+            loadStudentLate();
+            loadStudentOnTime();
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -56,11 +86,16 @@ namespace timerManagement
 
             addButton.Enabled = true;
             addGroup.Enabled = true;
+            listViewLate.Enabled = true;
+            listViewOnTime.Enabled = true;
             eventTextBox.Enabled = false;
             dateTimePicker1.Enabled = false;
             buttonStart.Enabled = false;
             buttonFormList.Enabled = true;
             MessageBox.Show($"{eventTextBox.Text} csv file has been created!", "Success!");
+
+            loadStudentLate();
+            loadStudentOnTime();
 
         }
 
@@ -85,6 +120,8 @@ namespace timerManagement
 
         private void buttonFormList_Click(object sender, EventArgs e)
         {
+            loadStudentLate();
+            loadStudentOnTime();
             listForm liform = new listForm();
             liform.ShowDialog();
 
@@ -98,6 +135,26 @@ namespace timerManagement
         private void onTimeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listViewLate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Doy you want to close the Application?", 
+                "Exit", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

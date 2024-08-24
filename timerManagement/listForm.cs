@@ -35,18 +35,11 @@ namespace timerManagement
 
         private void loadStudentList()
         {
-            List<string> people = dataAccess.loadStudent();
+            List<string[]> people = dataAccess.loadStudent();
             allStudentList.Items.Clear();
-            foreach (string person in people)
+            foreach (string[] person in people)
             {
-                string data = person.ToString();
-                List<string> row = new List<string>(data.Split(' '));
-                string getData = splitter(row[1]);
-                row.RemoveAt(1);
-                row.Insert(1, getData);
-
-                string[] newRow = row.ToArray();
-                var listViewItem = new ListViewItem(newRow);
+                var listViewItem = new ListViewItem(person);
                 allStudentList.Items.Add(listViewItem);
             }
         }

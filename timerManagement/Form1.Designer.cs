@@ -47,12 +47,12 @@
             panel3 = new Panel();
             label4 = new Label();
             label3 = new Label();
-            onTimeList = new ListView();
+            listViewOnTime = new ListView();
             oStudentIDCol = new ColumnHeader();
             oLastNameCol = new ColumnHeader();
             oFirstName = new ColumnHeader();
             omiddleInitialCol = new ColumnHeader();
-            listView1 = new ListView();
+            listViewLate = new ListView();
             studentIDCol = new ColumnHeader();
             lastNameCol = new ColumnHeader();
             firstNameCol = new ColumnHeader();
@@ -219,8 +219,8 @@
             // 
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(onTimeList);
-            panel3.Controls.Add(listView1);
+            panel3.Controls.Add(listViewOnTime);
+            panel3.Controls.Add(listViewLate);
             panel3.Location = new Point(1172, 5);
             panel3.Name = "panel3";
             panel3.Size = new Size(446, 671);
@@ -244,18 +244,19 @@
             label3.TabIndex = 2;
             label3.Text = "LATE";
             // 
-            // onTimeList
+            // listViewOnTime
             // 
-            onTimeList.Columns.AddRange(new ColumnHeader[] { oStudentIDCol, oLastNameCol, oFirstName, omiddleInitialCol });
-            onTimeList.FullRowSelect = true;
-            onTimeList.GridLines = true;
-            onTimeList.Location = new Point(3, 374);
-            onTimeList.Name = "onTimeList";
-            onTimeList.Size = new Size(435, 294);
-            onTimeList.TabIndex = 1;
-            onTimeList.UseCompatibleStateImageBehavior = false;
-            onTimeList.View = View.Details;
-            onTimeList.SelectedIndexChanged += onTimeList_SelectedIndexChanged;
+            listViewOnTime.Columns.AddRange(new ColumnHeader[] { oStudentIDCol, oLastNameCol, oFirstName, omiddleInitialCol });
+            listViewOnTime.Enabled = false;
+            listViewOnTime.FullRowSelect = true;
+            listViewOnTime.GridLines = true;
+            listViewOnTime.Location = new Point(3, 374);
+            listViewOnTime.Name = "listViewOnTime";
+            listViewOnTime.Size = new Size(435, 294);
+            listViewOnTime.TabIndex = 1;
+            listViewOnTime.UseCompatibleStateImageBehavior = false;
+            listViewOnTime.View = View.Details;
+            listViewOnTime.SelectedIndexChanged += onTimeList_SelectedIndexChanged;
             // 
             // oStudentIDCol
             // 
@@ -275,19 +276,21 @@
             // omiddleInitialCol
             // 
             omiddleInitialCol.Text = "Middle Initial";
-            omiddleInitialCol.Width = 110;
+            omiddleInitialCol.Width = 100;
             // 
-            // listView1
+            // listViewLate
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { studentIDCol, lastNameCol, firstNameCol, middleInitialCol });
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(3, 33);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(435, 305);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listViewLate.Columns.AddRange(new ColumnHeader[] { studentIDCol, lastNameCol, firstNameCol, middleInitialCol });
+            listViewLate.Enabled = false;
+            listViewLate.FullRowSelect = true;
+            listViewLate.GridLines = true;
+            listViewLate.Location = new Point(3, 33);
+            listViewLate.Name = "listViewLate";
+            listViewLate.Size = new Size(435, 305);
+            listViewLate.TabIndex = 0;
+            listViewLate.UseCompatibleStateImageBehavior = false;
+            listViewLate.View = View.Details;
+            listViewLate.SelectedIndexChanged += listViewLate_SelectedIndexChanged;
             // 
             // studentIDCol
             // 
@@ -320,9 +323,11 @@
             Controls.Add(panel2);
             Controls.Add(timeForm);
             Controls.Add(flowLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Form1";
-            Text = "STUDENT TIMER TRACKER MANAGEMENT SYSTEM";
+            Text = "STUDENT TIMER TRACKER SYSTEM";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -355,8 +360,8 @@
         private Panel panel3;
         private Label label4;
         private Label label3;
-        private ListView onTimeList;
-        private ListView listView1;
+        private ListView listViewOnTime;
+        private ListView listViewLate;
         private ColumnHeader oStudentIDCol;
         private ColumnHeader oLastNameCol;
         private ColumnHeader oFirstName;
